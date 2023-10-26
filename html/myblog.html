@@ -6,10 +6,12 @@
     <style>
         *{ /* 전체 설정 */
             box-sizing: border-box; /* 이쁘게 box로 모음*/
+            
            
         }
         header{
-            background-color: #f09723b0;
+            background: linear-gradient(to right,lightCyan ,skyBlue 60%,deepskyblue 100%);
+            /* background-color: #f09723b0; */
             padding: 30px;
             text-align: center;
             font-size: 35px;
@@ -18,9 +20,9 @@
 
         nav{
             float: left; /* 왼쪽으로 위치*/
-            width: 30%;
-            height: 500px;
-            background: #f5a8ef;
+            width: 15%;
+            height: 1000px;
+            background: #0a0611;
             padding: 20px;
         }
         nav ul{
@@ -30,9 +32,9 @@
         article{
             float: left;
             padding: 20px;
-            width: 70%;
-            background-color: #f1f1f1;
-            height: 500px;
+            width: 85%;
+            background-color: #c0d5d8;
+            height: 1000px;
         }
         /* 여기중요*/
         section::after{
@@ -41,7 +43,8 @@
             clear: both;
         }
         footer{
-            background-color: #cfff33;
+            background:linear-gradient(45deg,violet,Orange); /*시작할 색상 정하기*/
+            /* background-color: #cfff33;  */
             padding: 10px;
             text-align: center;
             color: black;
@@ -64,29 +67,50 @@
             
         }
         .read-text{
-            float: right;
-            width: 100px;
+            float: none;
+            width: 130px;
+            padding: 5px;
             
         }
+        .retext{
+            box-sizing: border-box;
+            width: 50%;
+            height: 50%;
+            margin-top:25%;
+            padding: 0; 
+        }
+        input{
+            padding: 0px, 5px;
+        }
+        textarea{
+            height: 100px;
+        }
+        #comments{
+            border: 1px solid #9f9ba7;
+            padding: 0;
+            width: 200px;
+            height: 0;
+        }
+
 
     </style>
 </head>
 <body>
-    <h2 class = "title">홈페이지 메인</h2>
-    <p class = "title" style="color:rgb(23, 14, 44) ;">할거 없는 당신이 기어코 들어온 홈페이지</p>
+    <h2 class = "title">Tistory Blog</h2>
+    <p class = "title" style="color:rgb(23, 14, 44) ;">종환이형한테 난 디자인은 아니라고 들었따 진짜인거 같다 내가봐도 미적감각이 박살났다</p>
     <header>
-        <h2 style="color: #eb56e3;">왜 들어왔어</h2>
+        <h2 style="color: #eb56e3;">강아지 키우고 싶은사람</h2>
     </header>
     <section> <!-- 보통 회사에서 되어있는 구조 -->
         <nav>
             <ul>
-                <li>Bad Java
+                <li>Java
                     <p class = "read-text">Java Error</p>
                 </li>
-                <li>So Bad Oracle
+                <li>Oracle & SQL
                     <p class = "read-text">Oracle Error</p>
                 </li>
-                <li>Fk Bad HTML
+                <li>HTML
                     <p class = "read-text">HTML Error</p>
                 </li>
             </ul>
@@ -96,11 +120,59 @@
              <h1>여기다 뭐쓰지</h1>
              <p>진짜 쓸게없네 블로근데 글쓸게 없어<br>
             대체 뭘 적어야 하는게야 으이?</p>
+
+
+            <div class = "retext">댓글 쓰기<br>
+                <input type = "text" placeholder="닉네임" style="width: 40%;"><input type="text" placeholder="비밀번호" style="width: 40%" >
+                <textarea id="commentInput" placeholder ="댓글을 입력해주세요." style="width: 80%" style="height: 150px" ></textarea>
+                <br>
+                <button onclick="addComment()">Enter</button>
+                
+                <p id="clicktext"></p>
+                <div id = "comments" >
+
+                </div>
+                
+            </div>
+            
+            
         </article>
     </section> <!-- 세션-->
 </body>
 <footer>
     <p> Blog is powered by kakao / Designed by Tistory </p>
 </footer>
+<foot></foot>
+    <script>
+        function retext(){
+                   
+                if(confirm("정말 등록하시겠습니까?")){
+                    alert("댓글이 등록 되었습니다.")
+                       
+                }else{
+                    alert("댓글이 등록되지 않았습니다.")
+                }
+                   
+               };
+        
+        function addComment(){
+            const commnetInput = document.getElementById("commentInput");
+            const commentText = commnetInput.value;
+
+            if(commentText.trim() === ""){
+                alert("하나라도 입력하시라구요.")
+                return;
+            }
+            const commentsBox = document.getElementById("comments");
+            const commentDIV = document.createElement("div");
+            commentDIV.className = "retext";
+            commentDIV.textContent = commentText;
+
+            commentsBox.appendChild(commentDIV);
+            commnetInput.value = "";
+
+        }
+    </script>
+
 
 </html>
