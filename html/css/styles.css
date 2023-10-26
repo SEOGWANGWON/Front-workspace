@@ -41,7 +41,7 @@
                 margin-top:  20px; ; /* 머리에서부터 공간을 주겠따*/
             }
             /* 타입에 따라 개별적으로 CSS를 설정할수있따*/
-            .form-container input[type="text"],form-container textarea{ /* 같은내용의 클래스가 있다면 ,로 한번에 써도된다. ex) post, post-list*/
+            .form-container input[type="text"],.form-container textarea{ /* 같은내용의 클래스가 있다면 ,로 한번에 써도된다. ex) post, post-list*/
                 width : 100%;
                 padding: 10px;
                 margin-bottom:10px;

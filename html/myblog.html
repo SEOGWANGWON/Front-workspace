@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Blog</title>
+    <style>
+        *{ /* 전체 설정 */
+            box-sizing: border-box; /* 이쁘게 box로 모음*/
+           
+        }
+        header{
+            background-color: #f09723b0;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+
+        nav{
+            float: left; /* 왼쪽으로 위치*/
+            width: 30%;
+            height: 500px;
+            background: #f5a8ef;
+            padding: 20px;
+        }
+        nav ul{
+            padding: 10px;
+            
+        }
+        article{
+            float: left;
+            padding: 20px;
+            width: 70%;
+            background-color: #f1f1f1;
+            height: 500px;
+        }
+        /* 여기중요*/
+        section::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        footer{
+            background-color: #cfff33;
+            padding: 10px;
+            text-align: center;
+            color: black;
+            
+        }
+        @media (max-width:600px){ /* 모바일 버전으로 볼때*/
+            nav,article{
+                width: 100%;
+                height: auto;
+        }
+        }
+        .title{
+            text-align: center;
+        }
+        li{
+            color:#cfff33;
+            font-size: 18px;
+            padding: 18px;
+            float: left;
+            
+        }
+        .read-text{
+            float: right;
+            width: 100px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <h2 class = "title">홈페이지 메인</h2>
+    <p class = "title" style="color:rgb(23, 14, 44) ;">할거 없는 당신이 기어코 들어온 홈페이지</p>
+    <header>
+        <h2 style="color: #eb56e3;">왜 들어왔어</h2>
+    </header>
+    <section> <!-- 보통 회사에서 되어있는 구조 -->
+        <nav>
+            <ul>
+                <li>Bad Java
+                    <p class = "read-text">Java Error</p>
+                </li>
+                <li>So Bad Oracle
+                    <p class = "read-text">Oracle Error</p>
+                </li>
+                <li>Fk Bad HTML
+                    <p class = "read-text">HTML Error</p>
+                </li>
+            </ul>
+        </nav>
+   
+        <article> <!-- 컨텐츠를 나타낼때 쓰임-->
+             <h1>여기다 뭐쓰지</h1>
+             <p>진짜 쓸게없네 블로근데 글쓸게 없어<br>
+            대체 뭘 적어야 하는게야 으이?</p>
+        </article>
+    </section> <!-- 세션-->
+</body>
+<footer>
+    <p> Blog is powered by kakao / Designed by Tistory </p>
+</footer>
+
+</html>
