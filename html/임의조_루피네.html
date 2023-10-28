@@ -2,24 +2,66 @@
 <html lang="ko">
     <head>
         <meta charset="UTF-8">
-        <title>어쩌다 모이게된 임의조</title>
+        <title>kh정보교육원 2조</title>
         <style>
+            *{
+                box-sizing: border-box;
+                width: 95%;
+                
+
+            }
             .title{
                 text-align: center;
+                background-color: aliceblue;
             }
-            .member{
-                background-color: yellow;
+            .teamlist{
+                font-size: 16px;
+                background-color: rgb(221, 250, 215);
+                text-align: left;
+                width: 250px;
+                height: 900px;
             }
-            .reader{
-                background-color: coral;
+            .list{
+                padding: 20px;
+                height: 200px;
+                font-size: 16px;
             }
-            .all{
-                background-color: rgb(82, 148, 170);
-            }
+
         </style>
     </head>
     <body>
-        <div class = "title"><h1>조 이름 뭘로할까요</h1></div>
+        <header>
+            <h2 class = "title">서브프로젝트 2조</h2>
+        </header>
+        <section>
+             <nav>
+                <ul class = "teamlist">
+                    <li><a style="color: black;">조원 목록</a></li>
+                    <ul>
+                        <li class = "list"><a href="https://gkdms2710.tistory.com/">임하은</a></li>
+                        <li class = "list"><a href="https://seungaeahn.tistory.com/">안승애</a></li>
+                        <li class = "list"><a href="https://im2ho.tistory.com/">나세희</a></li>
+                        <li class = "list"><a href="https://hotsixlover.tistory.com/">서광원</a></li>
+                    </ul>
+                </ul>
+             </nav>
+        </section>
+        <form id = "postForm">
+            <label for="title">제목 : </label>
+            <input type="text" id="title" name="title" required> <!-- 필수로 적어줘야 하는애 required-->
+            <label for="content">내용 : </label>
+            <textarea id="content" name="content" required></textarea>
+            <button type="submit" id = "postUppend">게시하기</button>
+        </form>
+    </body>
+    <foot>
+        
+    </foot>
+
+</html>
+
+<!--
+    <div class = "title"><h1>조 이름 뭘로할까요</h1></div>
         <div class="all">2023-10-25
             <br>
             <li><a href="#" style="color: indigo;">조원 목록</a></li>
@@ -32,9 +74,4 @@
             <h4 class="reader"><span style = color:darkcyan>조장</span> 서광원 <img src=""></h4>
             <input type="text" placeholder="황의조">
         </div>
-    </body>
-    <foot>
-        
-    </foot>
-
-</html>
+    -->
