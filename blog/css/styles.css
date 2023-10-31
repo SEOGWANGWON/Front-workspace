@@ -13,7 +13,7 @@ h2{
     font-size: 20px;
 }
 #container{
-    width: 80%;
+    width: 70%;
    /* 글 가운데로 옮기기 text-align: center; */
    /* margin : 20px 상 하 좌 우 모두 20px
       margin : 20px 0; 상하 20px 좌우 0
@@ -21,12 +21,16 @@ h2{
                위, 오른쪽, 아래, 왼쪽 (위로시작한 시계방향 으로 한바퀴)
    */
    
-   margin: 0 auto; /*범위 전체 가운데로 옮기기 */
+    /*margin: 0 auto; 범위 전체 가운데로 옮기기 */
+    margin-left: 30%;
     background-color: #fff;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
             /*좌우 위아래 크기  박스뒤에 그림자 크기,위치*/
     padding: 20px;
     border-radius: 10px; /* 둥근정도*/
+    min-height: 1562px;
+    max-height: 1562px;
+    
 }
 .post{
     border: 1px solid #ddd;
@@ -34,12 +38,27 @@ h2{
     padding: 20px;
     background-color: #fff;
 }
-form{
+.postForm{ /* 게시물 작성란 */
     /*margin은 padding 값을 관리 (상하 좌우) */
     margin: 20px 0;
     padding: 20px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
+    width: 50%;
+    height: 0 auto;
+    border-radius: 5px;
+    margin-left: 45%;
+    margin-right: 5%;
+    
+
+}
+.posts{ /* 게시판 */
+    margin: 0 5% 0 5%;
+    width: 0 auto;
+    height: 1062px;
+    border: 1px solid #b3b3b3;
+
+
 }
 label{
     display: block;
@@ -72,6 +91,12 @@ button[type="submit"]{
     border: none;   /*테두리 제거*/
     padding: 10px;
     cursor: pointer;    /*마우스 갖다대면 변화*/
+}
+.blogImg{
+    margin: 1.5% 1% 1.5% 5%;
+    width: 20%;
+    height: 0 auto;
+    float: left;
 }
 
 
