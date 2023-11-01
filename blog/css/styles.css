@@ -98,5 +98,11 @@ button[type="submit"]{
     height: 0 auto;
     float: left;
 }
+.whyGoodMorning{
+    margin: 0 auto;
+    max-width: 20%;
+    min-width: 20%;
+    height: 100%;
+}
 
 
