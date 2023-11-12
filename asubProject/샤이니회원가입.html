@@ -10,12 +10,12 @@
             <div class="TabColor"><img src="./img/oldicon/mypage.png" class="TabiconImage"><strong class="TabTextStyle">회원 가입</strong> 
                 <button id="pageCloseButton" class="pageCloseButton" onclick="closeButton()"><Strong class="pageCloseButtonText">X</Strong></button>
             </div>           
-                <div id="createAccount">
+            <div id="createAccount">
                 <div id="divid">
                     <label for="id">
                         <img class="iconImg" src="./img/oldicon/user.png">
                     </label>
-                    <input id="id" type="text" placeholder="아이디">
+                    <input id="id" type="text" oninput="idCheck()" placeholder="아이디">
                     <button id="idButton">아이디 중복 확인</button>
                     <p id="ruleid"></p>
                 </div>
@@ -62,9 +62,7 @@
                     <label for="emailid">
                         <img class="iconImg" src="./img/oldicon/email.png">
                     </label>
-                    <input id="emailid" type="text" placeholder="myemail">
-                    <strong>@</strong>
-                    <input id="emailLink" type="text" placeholder="naver.com">
+                    <input id="emailid" type="email" placeholder="myemail">
                     <p id="ruleemail"></p>
                 </div>
                 
