@@ -30,7 +30,7 @@ function closeButton(){
 function idCheck(){
 	
 	var userid = document.getElementById("id").value;
-	var idPattarn =  /^[A-za-z0-9]{6,12}$/;
+	const idPattarn =  /^[A-za-z0-9]{6,12}$/;
 	
 	if(idPattarn.test(userid)){
 		$('#ruleid').text('조건 일치').css('color', 'green');
@@ -42,28 +42,27 @@ function idCheck(){
 function nameCheck(){
 
     var username = document.getElementById("name").value; 
-    var namePattarn = /^[가-힣]{1,15}$/;
+    const namePattarn = /^[가-힣]{1,15}$/;
 
     if(namePattarn.test(username)){
 		$('#rulename').text('조건 일치').css('color', 'green');
 	}else{
-        $('#rulename').text("아이디는 6 ~ 12 자의 숫자,영어 로만 구성되어야합니다").css('color', 'red');
+        $('#rulename').text("이름은 15자 이하의 한글로만 구성되어야 합니다.").css('color', 'red');
      };
 };
 
-function passwordCheck(){
-
-    var password = document.getElementById("pw").value;
-    var passwordPattarn = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,32}$/;
-
-    if(passwordPattarn.test(password)){
-		$('#rulename').text('조건 일치').css('color', 'green');
-	}else{
-        $('#rulename').text("아이디는 6 ~ 12 자의 숫자,영어 로만 구성되어야합니다").css('color', 'red');
-     };
-}
 
 function pwCheck(){
+	
+	var password = document.getElementById("pw").value;
+    const passwordPattarn = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,32}$/;
+
+    if(passwordPattarn.test(password)){
+		$('#rulepm').text('조건 일치').css('color', 'green');
+	}else{
+        $('#rulepm').text("비밀번호는 6 ~ 32자의 영문, 대문자, 소문자, 특수문자, 숫자를 포함해야합니다.").css('color', 'red');
+     };
+	
     if($('#pw').val() == $('#checkpw').val()){
         $('#checkpm').text('비밀번호 일치').css('color', 'green');
     }else{
@@ -74,12 +73,12 @@ function pwCheck(){
 function nicknameCheck(){
 
     var userNickname = document.getElementById("nickname").value;
-    var nicknamePattarn =  /^[가-힣A-za-z0-9]{1,20}$/;
+    const nicknamePattarn =  /^[가-힣A-za-z0-9]{1,20}$/;
     
     if(nicknamePattarn.test(userNickname)){
-		$('#rulename').text('조건 일치').css('color', 'green');
+		$('#rulenickname').text('조건 일치').css('color', 'green');
 	}else{
-        $('#rulename').text("아이디는 6 ~ 12 자의 숫자,영어 로만 구성되어야합니다").css('color', 'red');
+        $('#rulenickname').text("닉네임은 20자 이하의 영어,숫자,한글로만 구성되어야 합니다.").css('color', 'red');
      };
     
 };
@@ -87,24 +86,24 @@ function nicknameCheck(){
 function userEmailCheck(){
     
     var userEmail = document.getElementById("emailid").value;
-    var emailPattarn =  /^[A-Za-z-0-9\-\.]+@[A-Ja-z-0-9\-\.]+\.[A-Ja-z-0-9]+$/;
+    const emailPattarn =  /^[A-Za-z-0-9\-\.]+@[A-Ja-z-0-9\-\.]+\.[A-Ja-z-0-9]+$/;
 
     if(emailPattarn.test(userEmail)){
-		$('#rulename').text('조건 일치').css('color', 'green');
+		$('#ruleemail').text('조건 일치').css('color', 'green');
 	}else{
-        $('#rulename').text("아이디는 6 ~ 12 자의 숫자,영어 로만 구성되어야합니다").css('color', 'red');
+        $('#ruleemail').text("이메일은 80자 이하의 @과.를 포함한 영어, 숫자로만 구성되어야 합니다.").css('color', 'red');
      };
 };
 
 function userPhoneCheck(){
 
     var userPhone = document.getElementById("phoneNumber").value;
-    var phonePattarn = /^[0-1]{1,3}[0-9]{4,11}$/;
+    const phonePattarn = /^(010|011)[0-9]{8}$/;
 
     if(phonePattarn.test(userPhone)){
-		$('#rulename').text('조건 일치').css('color', 'green');
+		$('#rulephoneNumber').text('조건 일치').css('color', 'green');
 	}else{
-        $('#rulename').text("아이디는 6 ~ 12 자의 숫자,영어 로만 구성되어야합니다").css('color', 'red');
+        $('#rulephoneNumber').text("올바른 번호가 아닙니다.").css('color', 'red');
      };
 }
 
@@ -114,6 +113,7 @@ function userPhoneCheck(){
 
 
 function CreateUser(){
+    
     var userid = document.getElementById("id").value;
     var username = document.getElementById("name").value; 
     var password = document.getElementById("pw").value;
@@ -121,50 +121,53 @@ function CreateUser(){
     var userNickname = document.getElementById("nickname").value;
     var userEmail = document.getElementById("emailid").value;
     var userPhone = document.getElementById("phoneNumber").value;
+    var idCheckBox = document.getElementById("idCheck").value;
     
 
 
     
-    var idPattarn =  /^[A-za-z0-9]{6,12}$/;
-    var namePattarn = /^[가-힣]{1,15}$/;
-    var passwordPattarn = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
-    var nicknamePattarn =  /^[가-힣A-za-z0-9]{1,20}$/;
-    var emailPattarn =  /^[A-Za-z-0-9\-\.]+@[A-Ja-z-0-9\-\.]+\.[A-Ja-z-0-9]+$/;
-    var phonePattarn = /^[0-1]{1,3}[0-9]{4,11}$/;
+    const idPattarn =  /^[A-za-z0-9]{6,12}$/;
+    const namePattarn = /^[가-힣]{1,15}$/;
+    const passwordPattarn = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,32}$/;
+    const nicknamePattarn =  /^[가-힣A-za-z0-9]{1,20}$/;
+    const emailPattarn =  /^[A-Za-z-0-9\-\.]+@[A-Ja-z-0-9\-\.]+\.[A-Ja-z-0-9]+$/;
+    const phonePattarn = /^(010|011)[0-9]{8}$/;	
 
     if(!userid.match(idPattarn)){
-        alert("아이디는 6 ~ 12 자의 숫자,영어 로만 구성되어야합니다");
+        alert("아이디는 6 ~ 12 자의 숫자,영어 로만 구성되어야합니다"); 
         return false;
-    }
-    if(!username.match(namePattarn)){
+    }else if(idCheckBox !="idOnCheck"){
+        alert("아이디 중복체크를 하셔야합니다.")
+        return false;
+    }else if(!username.match(namePattarn)){
         alert("이름은 15자 이하의 한글로만 구성되어야 합니다.");
         return false;
-    }
-    if(!password.match(passwordPattarn)){
-        alert("비밀번호는 8 ~ 32자의 영문, 대문자, 소문자, 특수문자, 숫자를 포함해야합니다.");
+    }else if(!password.match(passwordPattarn)){
+        alert("비밀번호는 6 ~ 32자의 영문, 대문자, 소문자, 특수문자, 숫자를 포함해야합니다.");
         return false;
-    }
-    if(password !== passwordCheck){
+    }else if(password !== passwordCheck){
         alert("비밀번호가 일치하지 않습니다.");
         return false;
-    }
-    if(!userNickname.match(nicknamePattarn)){
+    }else if(!userNickname.match(nicknamePattarn)){
         alert("닉네임은 20자 이하의 영어,숫자,한글로만 구성되어야 합니다.");
         return false;
-    }
-    if(!userEmail.match(emailPattarn)){
-        alert("이메일은 80자 이하의 영어, 숫자로만 구성되어야 합니다.")
+    }else if(!userEmail.match(emailPattarn)){
+        alert("이메일은 80자 이하의 @과.를 포함한 영어, 숫자로만 구성되어야 합니다.")
         return false;
-    }
-    if(!userPhone.match(phonePattarn)){
+    }else if(!userPhone.match(phonePattarn)){
         alert("올바른 번호가 아닙니다.");
         return false;
-    }
-    alert("회원가입이 정상적으로 완료되었습니다!.");
-    var pageMove = "https://music.apple.com/kr/browse";
-    location.href=pageMove;     // ( 현재 페이지에서 이동 )
+    }else{
+		return true;
+	
+	
+    //alert("회원가입이 정상적으로 완료되었습니다!.");
+    //var pageMove = "https://music.apple.com/kr/browse";
+    //location.href=pageMove;     // ( 현재 페이지에서 이동 )
     
     // window.open(사이트링크) ( 새창 열기 )
+    
+    };
 
 
 
